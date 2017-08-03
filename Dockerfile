@@ -5,8 +5,10 @@ LABEL maintainer "knuschprig <contact@knuschprig.ch>"
 RUN apt-get update && apt-get upgrade -y && apt-get install sudo
 RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 RUN apt-get install nodejs npm git -y 
-RUN cd /opt && git clone https://github.com/synzen/Discord.RSS.git
-RUN cd Discord.RSS && npm install
+WORKDIR /opt
+RUN git clone https://github.com/synzen/Discord.RSS.git
+WORKDIR /opt/Discord.RSS
+RUN npm install
 
 RUN chmod 0755 /opt/Discord.RSS/* 
 RUN adduser -D feedbot
