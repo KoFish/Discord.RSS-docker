@@ -12,7 +12,7 @@ WORKDIR /opt/Discord.RSS
 RUN npm install
 
 RUN chmod 0755 /opt/Discord.RSS/* 
-RUN adduser -D feedbot
+RUN useradd -ms /bin/bash feedbot
 
 USER feedbot
 VOLUME ["/opt/Discord.RSS/"]
