@@ -4,7 +4,7 @@ LABEL maintainer "knuschprig <contact@knuschprig.ch>"
 # Base image setup and important dependencies
 RUN apt-get update && apt-get upgrade -y && apt-get install sudo
 RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-RUN apt-get install nodejs npm -y 
+RUN apt-get install nodejs npm git -y 
 RUN cd /opt && git clone https://github.com/synzen/Discord.RSS.git
 RUN cd Discord.RSS && npm install
 
