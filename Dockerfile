@@ -18,5 +18,4 @@ USER feedbot
 VOLUME ["/opt/Discord.RSS/"]
 WORKDIR /opt/Discord.RSS
 
-ENV PATH="/opt/Discord.RSS/"
-CMD ["nodejs", "./server.js"]
+CMD [ "npm", "start" ]
