@@ -10,8 +10,8 @@ WORKDIR /opt
 RUN git clone https://github.com/synzen/Discord.RSS.git
 WORKDIR /opt/Discord.RSS
 RUN npm install
-
-RUN chmod 0755 /opt/Discord.RSS/* 
+RUN chown -R feedbot /opt/Discord.RSS/* 
+RUN chmod 755 /opt/Discord.RSS/* 
 RUN useradd -ms /bin/bash feedbot
 
 USER feedbot
