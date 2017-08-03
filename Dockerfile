@@ -1,10 +1,11 @@
 FROM ubuntu:16.04
+FROM node:8.2
+
 LABEL maintainer "knuschprig <contact@knuschprig.ch>"
 
 # Base image setup and important dependencies
 RUN apt-get update && apt-get upgrade -y && apt-get install sudo
-RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-RUN apt-get install nodejs npm git -y 
+RUN apt-get install npm git -y 
 WORKDIR /opt
 RUN git clone https://github.com/synzen/Discord.RSS.git
 WORKDIR /opt/Discord.RSS
